@@ -55,10 +55,8 @@ namespace Ds.App.Controllers
 
             var aluno = _mapper.Map<Disciplina>(disciplinaViewModel);
             await _disciplinaService.Adicionar(aluno);
+            return CustomResponse(disciplinaViewModel);
 
-            //if (!OperacaoValida()) return View(disciplinaViewModel);
-
-            return RedirectToAction("Index");
         }
 
         [HttpPut("{id:guid}")]
